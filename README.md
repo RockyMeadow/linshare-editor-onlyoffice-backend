@@ -67,3 +67,20 @@ From `linshare-editor-onlyoffice-backend` side, use the following configuration,
   }
 }
 ```
+
+## Docker
+
+### Build
+In order to utilize environment values for custom configuration. You can add your own environment values that will be used for certain configuration in `config/custom-environment-variables.json`, this configuration will override the other configuration files to use the environment values instead. To build the image:
+
+```
+docker build -t linagora/linshare-editor-onlyoffice-backend .
+```
+
+### Run
+```
+docker run -it -p 8800:8081 --rm --name linshare-editor-onlyoffice-backend \
+  -e LINSHARE_BASE_URL=http://172.17.0.1:28080/linshare/webservice/rest \
+  -e MONGO_CONNECTION_STRING=mongodb://localhost:27017/linshare-oo-editor \
+  linagora/linshare-editor-onlyoffice-backend
+```

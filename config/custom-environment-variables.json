@@ -1,0 +1,8 @@
+{
+  "linshare": {
+    "baseUrl": "LINSHARE_BASE_URL"
+  },
+  "db": {
+    "connectionString": "MONGO_CONNECTION_STRING"
+  }
+}
